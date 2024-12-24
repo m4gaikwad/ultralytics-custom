@@ -17,7 +17,8 @@ RUN mkdir /data/weights && /usr/local/bin/yolo settings weights_dir="/data/weigh
 RUN mkdir /data/runs && /usr/local/bin/yolo settings runs_dir="/data/runs"
 
 # Start JupyterLab with tutorial notebook
-ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--allow-root", "--ip=*"]
+#ENTRYPOINT ["/usr/local/bin/jupyter", "lab", "--allow-root", "--ip=*"]
+CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/workspace --ip 0.0.0.0 --no-browser --allow-root"]
 
 # Usage Examples -------------------------------------------------------------------------------------------------------
 
